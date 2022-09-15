@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'api-challenge'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_84E52FE7BCED4B56863BBF30D8D2E90C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E0819C488A044AD2BE09444506E983CA }}
           package: '*.jar'
