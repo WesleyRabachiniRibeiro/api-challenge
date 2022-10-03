@@ -50,11 +50,11 @@ public class UserController {
         }
     }
 
-    @GetMapping("/email/{email}")
+    @GetMapping("/email")
     @ApiOperation(value = "Return user to email")
-    public ResponseEntity<SearchUserEmail> findUserbyEmail(@PathVariable String email){
+    public ResponseEntity<SearchUserEmail> findUserbyEmail(@RequestBody RegistryEmail dto){
         try {
-            UserModel user = service.findUserByEmail(email);
+            UserModel user = service.findUserByEmail(dto.getEmail());
             return ResponseEntity.ok(UserMapper.fromEntitytoUserEmail(user));
         }catch (Exception ex){
             return ResponseEntity.notFound().build();
